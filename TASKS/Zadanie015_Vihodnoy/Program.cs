@@ -6,5 +6,5 @@ Console.Write("Write weeks number (1-7): ");
 int n = Convert.ToInt32(Console.ReadLine());
 if (n >= 1 && n <= 5)
    Console.WriteLine("Not holiday");
-   else (n == 6 || n == 7)
+   else
     Console.WriteLine("It is holiday");
