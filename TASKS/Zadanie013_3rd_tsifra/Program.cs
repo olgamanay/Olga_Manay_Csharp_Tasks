@@ -7,14 +7,17 @@
 Console.Clear();
 Console.Write("Write number: ");
 int n = Convert.ToInt32(Console.ReadLine());
-if (While ((n > 1000), n = n / 10))
-    {
-    Console.WriteLine(n % 10);
-    }
- else if (n > 100)
-    Console.WriteLine(n % 10);
-else
+if (n < 100)
     Console.WriteLine("no");
+else
+{
+    while (n > 1000)
+    {
+    n = n / 10;
+    }
+    Console.WriteLine(n);
+    Console.WriteLine(n % 10);
+}
 
         
     
