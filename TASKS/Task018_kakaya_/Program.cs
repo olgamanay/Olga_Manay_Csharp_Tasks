@@ -1,10 +1,4 @@
-﻿// При вводе номера четверти показывать диапазон 
-// возможных координат
-
-
-
-
-Console.Clear();
+﻿Console.Clear();
 Console.Write("Write 1 - 4 : ");
 int n = Convert.ToInt32(Console.ReadLine());
 
