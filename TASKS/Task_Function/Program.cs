@@ -9,4 +9,5 @@ int f(int a, int b)
 }
 
 int a = 10, b = 7;
-Console.WriteLine(f(a, b));
+int result = f(a, b);
+Console.WriteLine(result);
