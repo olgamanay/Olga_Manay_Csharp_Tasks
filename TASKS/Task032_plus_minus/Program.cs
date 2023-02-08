@@ -6,8 +6,8 @@
 
 void ReleaseArray(int[] array)
 {
-    for (int i = 0; i < array.Length; i++)
-        array[i] *= (-1); // array[i] = array[i] * (-1);
+for (int i = 0; i < array.Length; i++)
+array[i] *= (-1); // array[i] = array[i] * (-1);
 }
 
 Console.Clear();
@@ -16,5 +16,6 @@ int n = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[n];
 InputArray(array);
 Console.WriteLine($"Begining array: [{string.Join(", ", array)}]");
+Console.Write("Write number, which do you find: ");
+int number = Convert.ToInt32(Console.ReadLine());
 ReleaseArray(array);
-Console.WriteLine($"Finishing array: [{string.Join(", ", array)}]");
