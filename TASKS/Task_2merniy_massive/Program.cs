@@ -5,7 +5,8 @@
         for (int j = 0; j < matrix.GetLength(1); j++)
             {
                 matrix[i, j] = new Random().Next(1, 21);
-                Console.Write($"{matrix[i, j]} \t");
+                Console.Write($"{matrix[i, j]} \t"); 
+                // \t - табуляция для ровных столбиков
             }
             Console.WriteLine();
     }
