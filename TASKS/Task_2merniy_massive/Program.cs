@@ -7,8 +7,8 @@
                 matrix[i, j] = new Random().Next(1, 21);
                 Console.Write($"{matrix[i, j]} \t");
             }
+            Console.WriteLine();
     }
-    Console.WriteLine();
 }
 
 
