@@ -1,39 +1,46 @@
-﻿void InputMatrix(int[,] matrix)
+﻿void FillMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
- 
-            matrix[i, j] = new Random().Next(1, 100);
-            
+        {
+            matrix[i, j] = new Random().Next(1, 11);
+        }       
     }
 }
 
-
-void Change(int[,] matrix, int[,] temp)
+void ScreenMatrix(int[,] matrix)
 {
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < matrix.GetLength(1); i++)
     {
-        for (int j = 0; j < 1; j++)
+        for(int j = 0; j < matrix.GetLength(1); j++)
         {
-            temp[i, j] = matrix[i, j];
+            Console.Write($"{matrix[i, j]} \t");
+        }
+        Console.WriteLine();
+    }
+}
+
+void ReleaseMatrix(int[,] matrix)
+{
+    int temp = 0;
+    for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            temp = matrix[0, j];
+            matrix[0, j] = matrix[matrix.GetLength(1) - 1, j];
+            matrix[matrix.GetLength(0)-1, j] = temp;
 
         }
-        Console.WriteLine($"Result sr arifm: {j + 1} = {sum / matrix.GetLength(0)}");
     }
-}
 
 
 Console.Clear();
-Console.Write("Write row's number: ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.Write("Write column's number: ");
-int m = Convert.ToInt32(Console.ReadLine());
-int[,] matrix = new int[n, m];
-int[,] temp = new int[n, m];
-InputMatrix(matrix);
+Console.Write("Write massive's size: ");
+int [] size = Console.ReadLine().Split().Select(x => int.Parse(x)).ToArray();
+int [,] matrix = new int[size[0], size[1]];
+FillMatrix(matrix);
+ScreenMatrix(matrix);
 Console.WriteLine();
-Console.WriteLine("Change row to column: ");
-Change(matrix, temp);
-PrintMatrix(matrix);
+ReleaseMatrix(matrix);
+ScreenMatrix(matrix);
 
