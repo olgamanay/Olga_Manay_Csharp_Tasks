@@ -38,21 +38,20 @@ void ReleaseMatrix(int[,] matrix)
             }
         }
     }
+    Console.WriteLine($"min = {min}; [{minIndexI}], [{minIndexJ}]");
 
-Console.WriteLine($"min = {min}; [{minIndexI}], [{minIndexJ}]");
-
-for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        if (i != minIndexI)
-        {
-            for (int j = 0; j < matrix.GetLength(1); j++)
+         if (i != minIndexI)
+         {
+             for (int j = 0; j < matrix.GetLength(1); j++)
             {
                 if (j != minIndexJ)
                     Console.Write($"{matrix[i, j]} \t");
             } 
-            Console.WriteLine();       
-        }
-    } 
+            Console.WriteLine();                    
+        } 
+    }
 }
 Console.Clear();
 Console.Write("Write massive's size: ");
