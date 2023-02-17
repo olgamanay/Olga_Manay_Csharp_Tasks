@@ -28,7 +28,7 @@ void ReleaseMatrix(int[,] matrix)
         {
             temp = matrix[0, j];
             matrix[0, j] = matrix[matrix.GetLength(1) - 1, j];
-            matrix[matrix.GetLength(0)-1, j] = temp;
+            matrix[matrix.GetLength(0) - 1, j] = temp;
 
         }
     }
